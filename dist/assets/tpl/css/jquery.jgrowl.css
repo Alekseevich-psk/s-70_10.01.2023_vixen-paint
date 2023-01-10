@@ -1,0 +1,165 @@
+.jGrowl {
+    font-size: 14px;
+    z-index: 999999999;
+    color: #fff;
+}
+
+.ie6 {
+    position: absolute;
+}
+
+.ie6.top-right {
+    top: expression((0 + (ignoreMe=document.documentElement.scrollTop ? document.documentElement.scrollTop: document.body.scrollTop)) + 'px');
+    right: auto;
+    bottom: auto;
+    left: expression((0 - jGrowl.offsetWidth + (document.documentElement.clientWidth ? document.documentElement.clientWidth: document.body.clientWidth) + (ignoreMe2=document.documentElement.scrollLeft ? document.documentElement.scrollLeft: document.body.scrollLeft)) + 'px');
+}
+
+.ie6.top-left {
+    top: expression((0 + (ignoreMe=document.documentElement.scrollTop ? document.documentElement.scrollTop: document.body.scrollTop)) + 'px');
+    left: expression((0 + (ignoreMe2=document.documentElement.scrollLeft ? document.documentElement.scrollLeft: document.body.scrollLeft)) + 'px');
+}
+
+.ie6.bottom-right {
+    top: expression((0 - jGrowl.offsetHeight + (document.documentElement.clientHeight ? document.documentElement.clientHeight: document.body.clientHeight) + (ignoreMe=document.documentElement.scrollTop ? document.documentElement.scrollTop: document.body.scrollTop)) + 'px');
+    left: expression((0 - jGrowl.offsetWidth + (document.documentElement.clientWidth ? document.documentElement.clientWidth: document.body.clientWidth) + (ignoreMe2=document.documentElement.scrollLeft ? document.documentElement.scrollLeft: document.body.scrollLeft)) + 'px');
+}
+
+.ie6.bottom-left {
+    top: expression((0 - jGrowl.offsetHeight + (document.documentElement.clientHeight ? document.documentElement.clientHeight: document.body.clientHeight) + (ignoreMe=document.documentElement.scrollTop ? document.documentElement.scrollTop: document.body.scrollTop)) + 'px');
+    left: expression((0 + (ignoreMe2=document.documentElement.scrollLeft ? document.documentElement.scrollLeft: document.body.scrollLeft)) + 'px');
+}
+
+.ie6.center {
+    top: expression((0 + (ignoreMe=document.documentElement.scrollTop ? document.documentElement.scrollTop: document.body.scrollTop)) + 'px');
+    left: expression((0 + (ignoreMe2=document.documentElement.scrollLeft ? document.documentElement.scrollLeft: document.body.scrollLeft)) + 'px');
+    width: 100%;
+}
+
+.jGrowl {
+    position: absolute;
+}
+
+body>.jGrowl {
+    position: fixed;
+}
+
+.jGrowl.top-left, .jGrowl.top-right, .jGrowl.bottom-left, .jGrowl.bottom-right, .jGrowl.center {
+    top: 0;
+    width: 100%;
+}
+
+.center .jGrowl-notification {
+    margin-bottom: 0;
+}
+
+.center .jGrowl-notification, .center .jGrowl-closer {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.jGrowl .jGrowl-notification, .jGrowl .jGrowl-closer {
+    font-size: 1em;
+    display: none;
+    zoom: 1;
+    padding: 10px;
+    text-align: center;
+    background-color: #000;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
+    filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=85);
+}
+
+.jGrowl .jGrowl-notification {
+    min-height: 40px;
+}
+
+.jGrowl .jGrowl-notification .jGrowl-header {
+    font-size: .85em;
+    font-weight: 700;
+}
+
+.jGrowl .jGrowl-notification .jGrowl-close {
+    font: message-box;
+    font-weight: 700;
+    z-index: 99;
+    float: right;
+    margin: 0;
+    padding: 3px;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    background: none;
+}
+
+.jGrowl .jGrowl-closer {
+    font-size: .9em;
+    font-weight: 700;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.af-message-error, .tickets-message-error {
+    background-color: #ff3d3d !important;
+}
+
+.af-message-success, .tickets-message-success {
+    background-color: green !important;
+}
+
+.af-message-info, .tickets-message-info {
+    background-color: #000 !important;
+}
+
+.ajax_form.af_example {
+    width: 100%;
+}
+
+.ajax_form.af_example .controls input, .ajax_form.af_example .controls textarea {
+    width: 100%;
+}
+
+.ajax_form .error {
+    color: #ff3d3d;
+    border-color: #ff3d3d;
+}
+
+.ajax_form .error, .ajax_form .error::-webkit-input-placeholder, .ajax_form .error::-moz-placeholder, .ajax_form .error:-moz-placeholder, .ajax_form .error:-ms-input-placeholder {
+    color: #ff3d3d;
+}
+
+.ajax_form .error::-webkit-input-placeholder {
+    color: #ff3d3d;
+}
+
+.ajax_form .error::-moz-placeholder {
+    color: #ff3d3d;
+}
+
+.ajax_form .error:-moz-placeholder {
+    color: #ff3d3d;
+}
+
+.ajax_form .error:-ms-input-placeholder {
+    color: #ff3d3d;
+}
+
+@media screen and (min-width: 320px) {
+    .ajax_form.af_example .controls button[type="submit"] {
+        float: right;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .ajax_form.af_example .controls button {
+        width: 100%;
+        margin-top: 5px;
+    }
+}
+
+@media print {
+    .jGrowl {
+        display: none;
+    }
+}
