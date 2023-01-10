@@ -1,0 +1,982 @@
+@media print, (max-width: 1279px)
+{
+    /*-------------------
+        Global styles
+    -------------------*/
+    :root
+    {
+        --sidebar_width: 240px;
+    }
+
+
+    html.custom_scroll ::-webkit-scrollbar
+    {
+        width: 5px;
+        height: 5px;
+    }
+
+
+    .block
+    {
+        margin-bottom: 68px;
+    }
+
+    .block.bg
+    {
+        padding: 64px 0;
+    }
+
+
+    .production .swiper-container-horizontal > .swiper-pagination-bullets,
+    .production .swiper-pagination-custom,
+    .production .swiper-pagination-fraction
+    {
+        height: 48px;
+        padding: 16px 24px;
+    }
+
+
+
+    /*----------
+        Tabs
+    ----------*/
+    .tabs
+    {
+        margin-bottom: 24px;
+    }
+
+
+    .tabs button
+    {
+        font-size: 14px;
+
+        min-width: 180px;
+        height: 52px;
+        padding: 8px 20px;
+    }
+
+
+
+    /*--------------
+        Fancybox
+    --------------*/
+    .fancybox__slide
+    {
+        padding: 32px;
+    }
+
+
+
+    /*---------------
+        Accordion
+    ---------------*/
+    .accordion .accordion_item .head
+    {
+        min-height: 80px;
+        padding: 20px 64px 20px 0;
+    }
+
+
+    .accordion .accordion_item .head .title
+    {
+        font-size: 19px;
+        line-height: 23px;
+    }
+
+
+    .accordion .accordion_item .data
+    {
+        padding-bottom: 28px;
+    }
+
+
+
+    /*-----------
+        Share
+    -----------*/
+    .share
+    {
+        padding: 16px;
+    }
+
+
+
+    /*------------
+        Header
+    ------------*/
+    header .info
+    {
+        padding: 12px 0;
+    }
+
+
+    header .bottom .cont
+    {
+        padding: 0;
+    }
+
+
+    header .logo img
+    {
+        height: 64px;
+    }
+
+    header .logo .slogan
+    {
+        display: none;
+    }
+
+
+    header.absolute .contacts
+    {
+        margin-left: 60px;
+    }
+
+    header .contacts > * + *
+    {
+        margin-top: 4px;
+    }
+
+    header .contacts .phone
+    {
+        font-size: 22px;
+    }
+
+
+    header .menu
+    {
+        width: calc(100% - 160px);
+        margin-left: 8px;
+    }
+
+    header .menu .item > a
+    {
+        font-size: 16px;
+        line-height: 20px;
+
+        min-height: 48px;
+        padding: 8px 16px;
+    }
+
+
+    header .menu .sub_menu a
+    {
+        min-height: 48px;
+        padding: 8px 16px;
+    }
+
+
+    header .where_buy_link a
+    {
+        font-size: 16px;
+        line-height: 20px;
+
+        width: 128px;
+        min-height: 48px;
+        padding: 8px 16px;
+    }
+
+
+
+    header.fixed .bottom .logo
+    {
+        display: none;
+    }
+
+    header.fixed .menu
+    {
+        width: calc(100% - 160px);
+        margin-left: 8px;
+    }
+
+
+
+    /*-------------
+        Sidebar
+    -------------*/
+    aside .filter .item + .item
+    {
+        margin-top: 40px;
+    }
+
+
+    aside .filter .data,
+    aside .filter .data > * + *
+    {
+        margin-top: 16px;
+    }
+
+
+    aside .filter label
+    {
+        font-size: 16px;
+
+        padding-left: 28px;
+    }
+
+
+
+    aside .you_need .row
+    {
+        margin-bottom: -8px;
+        margin-left: -8px;
+    }
+
+    aside .you_need .row > *
+    {
+        width: calc(50% - 8px);
+        margin-bottom: 8px;
+        margin-left: 8px;
+    }
+
+
+    aside .you_need .product
+    {
+        font-size: 12px;
+        line-height: 16px;
+
+        padding: 12px;
+    }
+
+    aside .you_need .product .thumb
+    {
+        height: 100px;
+    }
+
+
+
+    aside .articles .block_title
+    {
+        font-size: 24px;
+
+        margin-bottom: 28px;
+    }
+
+
+    aside .articles .list > * + *
+    {
+        margin-top: 36px;
+    }
+
+
+
+    /*---------------
+        Page head
+    ---------------*/
+    .page_head
+    {
+        margin-bottom: 32px;
+    }
+
+
+    .page_head .cont
+    {
+        min-height: 280px;
+        padding-top: 176px;
+        padding-bottom: 40px;
+    }
+
+
+    .page_head .page_desc
+    {
+        font-size: 16px;
+        line-height: 24px;
+
+        width: 520px;
+        margin-top: 16px;
+    }
+
+
+
+    /*-----------------
+        Breadcrumbs
+    -----------------*/
+    .breadcrumbs
+    {
+        line-height: 20px;
+
+        margin-top: -24px;
+        margin-bottom: 32px;
+    }
+
+
+
+    /*----------------
+        Block head
+    ----------------*/
+    .block_head
+    {
+        margin-bottom: 32px;
+    }
+
+
+
+    /*------------------
+        Form elements
+    ------------------*/
+    .form .columns
+    {
+        --form_columns_offset: 20px;
+    }
+
+
+    .form .line
+    {
+        margin-bottom: 20px;
+    }
+
+
+    .form .submit_btn
+    {
+        padding: 10px 28px;
+    }
+
+
+    .form .bottom .agree
+    {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+
+
+    /*----------------
+        Typography
+    ----------------*/
+    .text_block
+    {
+        font-size: 17px;
+        line-height: 25px;
+    }
+
+
+    .text_block > *
+    {
+        margin-bottom: 20px;
+    }
+
+
+    .text_block h2
+    {
+        font-size: 26px;
+        line-height: 30px;
+    }
+
+
+    .text_block * + h2
+    {
+        margin-top: 48px;
+    }
+
+
+    .text_block img
+    {
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+
+
+    .text_block .quote
+    {
+        margin-top: 32px;
+        margin-bottom: 32px;
+        margin-left: 0;
+        padding: 24px 28px;
+    }
+
+    .text_block .quote .text
+    {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+
+
+    /*--------------
+        Articles
+    --------------*/
+    .articles .row
+    {
+        margin-bottom: -32px;
+        margin-left: -24px;
+    }
+
+    .articles .row > *
+    {
+        width: calc(25% - 24px);
+        margin-bottom: 32px;
+        margin-left: 24px;
+    }
+
+    .articles .row > *.big_w
+    {
+        width: calc(50% - 24px);
+    }
+
+
+
+    .articles .article .date
+    {
+        font-size: 14px;
+
+        bottom: 8px;
+        left: 8px;
+
+        padding: 8px 12px;
+    }
+
+    .articles .article .name
+    {
+        line-height: 22px;
+
+        padding: 16px 0 0;
+    }
+
+
+    .articles .article.big_w .name
+    {
+        font-size: 17px;
+        line-height: 23px;
+
+        bottom: 76px;
+
+        width: 360px;
+        padding: 0 24px;
+    }
+
+    .articles .article.big_w .date
+    {
+        bottom: 24px;
+        left: 24px;
+    }
+
+
+
+    /*--------------
+        Products
+    --------------*/
+    .products .row
+    {
+        margin-bottom: -32px;
+        margin-left: 0;
+    }
+
+    .products .row > *
+    {
+        width: 25%;
+        margin-bottom: 32px;
+        margin-left: 0;
+    }
+
+
+    .content .products .row > *
+    {
+        width: 33.333%;
+    }
+
+
+    .products .product
+    {
+        padding: 24px 20px;
+    }
+
+    .products .product .thumb
+    {
+        height: 160px;
+    }
+
+    .products .product .name
+    {
+        font-size: 17px;
+        line-height: 23px;
+    }
+
+    .products .product .desc
+    {
+        line-height: 18px;
+    }
+
+
+
+    /*-------------
+        History
+    -------------*/
+    .history .section
+    {
+        padding: 80px 0;
+    }
+
+
+    .history .data
+    {
+        width: calc(50% - 20px);
+    }
+
+    .history .data .year
+    {
+        font-size: 48px;
+        line-height: 100%;
+    }
+
+    .history .data .desc
+    {
+        margin-top: 28px;
+    }
+
+
+    .history .image
+    {
+        padding: 20px;
+    }
+
+
+
+    /*------------------
+        Product info
+    ------------------*/
+    .product_info .images
+    {
+        width: 400px;
+    }
+
+
+    .product_info .cont > .data
+    {
+        width: calc(100% - 440px);
+    }
+
+
+    .product_info .cont > .data .desc
+    {
+        line-height: 24px;
+
+        margin-top: 24px;
+    }
+
+
+    .product_info .cont > .data .tabs_container .text_block
+    {
+        line-height: 24px;
+    }
+
+
+
+    /*----------------
+        Production
+    ----------------*/
+    .production .cont > * + *
+    {
+        margin-top: 40px;
+    }
+
+
+    .production .swiper-button-next,
+    .production .swiper-button-prev
+    {
+        width: 48px;
+        height: 48px;
+    }
+
+    .production .swiper-button-prev
+    {
+        left: -24px;
+    }
+
+    .production .swiper-button-next
+    {
+        right: -24px;
+    }
+
+
+    .production .swiper-button-next:after,
+    .production .swiper-button-prev:after
+    {
+        left: 8px;
+
+        width: 16px;
+        height: 16px;
+    }
+
+    .production .swiper-pagination-bullet + .swiper-pagination-bullet
+    {
+        margin-left: 64px !important;
+    }
+
+    .production .swiper-pagination-bullet:last-child
+    {
+        margin-left: auto !important;
+    }
+
+
+    .production .image
+    {
+        padding-bottom: 50%;
+    }
+
+
+
+    /*--------------------
+        Contacts block
+    --------------------*/
+    .contacts_block .feedback
+    {
+        padding: 40px;
+    }
+
+    .contacts_block .feedback .title
+    {
+        font-size: 20px;
+        line-height: 22px;
+
+        margin-bottom: 24px;
+    }
+
+
+
+    .contacts_block .data
+    {
+        width: calc(50% - 40px);
+        padding-top: 40px;
+    }
+
+    .contacts_block .data .title
+    {
+        font-size: 20px;
+        line-height: 22px;
+
+        margin-bottom: 24px;
+    }
+
+
+    .contacts_block .data .row
+    {
+        margin-bottom: -32px;
+        margin-left: -24px;
+    }
+
+    .contacts_block .data .row > *
+    {
+        width: calc(50% - 24px);
+        margin-bottom: 32px;
+        margin-left: 24px;
+    }
+
+    .contacts_block .data .row > *.big_w
+    {
+        width: calc(100% - 24px);
+    }
+
+
+    .contacts_block .data .item .name
+    {
+        line-height: 20px;
+    }
+
+    .contacts_block .data .item .val
+    {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+
+
+    .contacts_block .map_wrap
+    {
+        height: 400px;
+        margin-top: -92px;
+    }
+
+
+
+    /*-----------------
+        Useful tips
+    -----------------*/
+    .useful_tips .row
+    {
+        margin-bottom: -32px;
+        margin-left: -24px;
+    }
+
+    .useful_tips .row > *
+    {
+        width: calc(33.333% - 24px);
+        margin-bottom: 32px;
+        margin-left: 24px;
+    }
+
+
+    .useful_tips .item .name
+    {
+        font-size: 17px;
+        line-height: 23px;
+
+        padding: 16px 16px 0;
+    }
+
+
+
+    /*---------
+        Why
+    ---------*/
+    .why .section
+    {
+        min-height: 432px;
+        padding: 80px 0;
+    }
+
+
+    .why .section .block_title
+    {
+        font-size: 23px;
+        line-height: 33px;
+
+        width: 640px;
+        margin: 0 auto 80px;
+    }
+
+
+    .why .section .data
+    {
+        width: calc(50% - 62px);
+    }
+
+
+    .why .section .data .number
+    {
+        font-size: 32px;
+        line-height: 54px;
+
+        top: 4px;
+        right: -92px;
+
+        width: 60px;
+        height: 60px;
+    }
+
+    .why .section .data .title
+    {
+        font-size: 30px;
+        line-height: 34px;
+    }
+
+    .why .section .data .desc
+    {
+        font-size: 17px;
+        line-height: 25px;
+
+        margin-top: 28px;
+    }
+
+
+    .why .section:nth-child(2n+1) .data .number
+    {
+        right: auto;
+        left: -92px;
+    }
+
+
+
+    /*-----------------
+        Main slider
+    -----------------*/
+    .main_slider .slide
+    {
+        min-height: 500px;
+        padding-top: 216px;
+        padding-bottom: 80px;
+    }
+
+
+    .main_slider .slide .info
+    {
+        width: 504px;
+    }
+
+    .main_slider .slide .title
+    {
+        font-size: 34px;
+    }
+
+    .main_slider .slide .desc
+    {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+
+    .main_slider .slide .img
+    {
+        width: 560px;
+        margin-right: -580px;
+    }
+
+
+
+    /*----------------
+        Advantages
+    ----------------*/
+    .advantages .item
+    {
+        padding: 24px 20px;
+    }
+
+    .advantages .item .icon
+    {
+        margin-bottom: 16px;
+    }
+
+
+
+    /*----------------
+        Info block
+    ----------------*/
+    .info_block .data
+    {
+        width: calc(50% - 20px);
+    }
+
+    .info_block .data .sub_title
+    {
+        font-size: 19px;
+        line-height: 25px;
+
+        margin-top: 20px;
+    }
+
+    .info_block .data .desc
+    {
+        line-height: 23px;
+
+        margin-top: 20px;
+    }
+
+    .info_block .data .link
+    {
+        margin-top: 28px;
+        padding: 8px 32px;
+    }
+
+
+    .info_block .video_link
+    {
+        width: calc(50% - 20px);
+    }
+
+    .info_block .video_link .icon
+    {
+        width: 92px;
+        height: 92px;
+    }
+
+    .info_block .video_link .icon img
+    {
+        height: 32px;
+    }
+
+
+
+    /*---------------
+        Categories
+    ---------------*/
+    .categories .category
+    {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .categories .category .name
+    {
+        left: 24px;
+
+        width: calc(100% - 48px);
+    }
+
+    .categories .category .thumb
+    {
+        height: 220px;
+    }
+
+    .categories .category .bg_thumb
+    {
+        height: 332px;
+    }
+
+
+
+    /*----------------
+        Error page
+    ----------------*/
+    .error_page
+    {
+        padding: 149px 0 60px;
+    }
+
+
+    .error_page .data
+    {
+        width: 696px;
+    }
+
+
+    .error_page .title
+    {
+        font-size: 60px;
+    }
+
+
+    .error_page .desc
+    {
+        font-size: 22px;
+        line-height: 32px;
+
+        margin-top: 20px;
+    }
+
+
+    .error_page .links a
+    {
+        padding: 6px 36px;
+    }
+
+
+
+    /*------------------
+        Article info
+    ------------------*/
+    .article_info
+    {
+        padding-top: 20px;
+    }
+
+
+    .article_info .article_title
+    {
+        font-size: 30px;
+        line-height: 38px;
+
+        margin-bottom: 36px;
+    }
+
+
+
+    /*------------
+        Footer
+    ------------*/
+    footer
+    {
+        padding: 28px 0;
+    }
+
+
+    footer .socials
+    {
+        margin-left: 52px;
+    }
+
+
+    footer .doanload_link
+    {
+        width: 220px;
+        margin-left: 40px;
+    }
+}
