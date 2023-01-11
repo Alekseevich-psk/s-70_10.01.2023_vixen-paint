@@ -24,6 +24,11 @@
             padding-bottom: 12px;
             border-radius: 4px;
             background-color: rgb(240, 240, 240);
+
+            @media(max-width: 960px) {
+                display: none;
+            }
+
             .manager__desc {
                 text-align: center;
             }
@@ -48,8 +53,7 @@
     }
 
     &__contacts {
-        padding-top: 28px;
-        border-top: 1px solid rgba(211, 211, 211, 0.849);
+        padding-top: 12px;
     }
 
     &__phones {

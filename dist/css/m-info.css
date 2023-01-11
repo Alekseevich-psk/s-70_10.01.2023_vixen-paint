@@ -30,6 +30,12 @@
   background-color: #f0f0f0;
 }
 
+@media (max-width: 960px) {
+  .manager__inner:last-child {
+    display: none;
+  }
+}
+
 .manager__inner:last-child .manager__desc {
   text-align: center;
 }
@@ -52,8 +58,7 @@
 }
 
 .manager__contacts {
-  padding-top: 28px;
-  border-top: 1px solid rgba(211, 211, 211, 0.849);
+  padding-top: 12px;
 }
 
 .manager__phones {
