@@ -54,7 +54,7 @@
         `<a href="mailto:${obj.email}" class="manager__link">${obj.email}</a>`);
 
         obj.phones.forEach((phone) => {
-            phonesWrap.insertAdjacentHTML("beforeend", `<a href="tel:${phone.replace(/\D/g, "")}" class="manager__link">${phone}</a>`);
+            phonesWrap.insertAdjacentHTML("beforeend", `<a href="tel:+${phone.replace(/\D/g, "")}" class="manager__link">${phone}</a>`);
         });
     }
 })();

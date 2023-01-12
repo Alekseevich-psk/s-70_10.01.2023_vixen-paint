@@ -42,7 +42,7 @@
     email.innerHTML = "";
     email.insertAdjacentHTML("beforeend", "<a href=\"mailto:".concat(obj.email, "\" class=\"manager__link\">").concat(obj.email, "</a>"));
     obj.phones.forEach(function (phone) {
-      phonesWrap.insertAdjacentHTML("beforeend", "<a href=\"tel:".concat(phone.replace(/\D/g, ""), "\" class=\"manager__link\">").concat(phone, "</a>"));
+      phonesWrap.insertAdjacentHTML("beforeend", "<a href=\"tel:+".concat(phone.replace(/\D/g, ""), "\" class=\"manager__link\">").concat(phone, "</a>"));
     });
   }
 })();
