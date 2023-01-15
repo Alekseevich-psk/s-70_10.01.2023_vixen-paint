@@ -45,4 +45,15 @@
       phonesWrap.insertAdjacentHTML("beforeend", "<a href=\"tel:+".concat(phone.replace(/\D/g, ""), "\" class=\"manager__link\">").concat(phone, "</a>"));
     });
   }
+
+  var mInfoSubWrap = parent.querySelectorAll(".m-info__sub-wrap");
+  if (!mInfoSubWrap.length) return;
+  mInfoSubWrap.forEach(function (el) {
+    var btn = el.querySelector('.m-info__btn-show-list');
+    var wrap = el.querySelector('.m-info__list');
+    btn.addEventListener('click', function () {
+      this.classList.toggle('active');
+      wrap.classList.toggle('active');
+    });
+  });
 })();

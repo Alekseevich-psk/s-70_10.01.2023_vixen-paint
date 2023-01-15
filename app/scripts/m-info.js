@@ -50,11 +50,24 @@
         phonesWrap.innerHTML = "";
         email.innerHTML = "";
 
-        email.insertAdjacentHTML("beforeend",
-        `<a href="mailto:${obj.email}" class="manager__link">${obj.email}</a>`);
+        email.insertAdjacentHTML("beforeend", `<a href="mailto:${obj.email}" class="manager__link">${obj.email}</a>`);
 
         obj.phones.forEach((phone) => {
             phonesWrap.insertAdjacentHTML("beforeend", `<a href="tel:+${phone.replace(/\D/g, "")}" class="manager__link">${phone}</a>`);
         });
     }
+
+    const mInfoSubWrap = parent.querySelectorAll(".m-info__sub-wrap");
+    if (!mInfoSubWrap.length) return;
+
+    mInfoSubWrap.forEach(el => {
+        const btn = el.querySelector('.m-info__btn-show-list');
+        const wrap = el.querySelector('.m-info__list');
+
+        btn.addEventListener('click', function() {
+            this.classList.toggle('active');
+            wrap.classList.toggle('active');
+        })
+    });
+
 })();
