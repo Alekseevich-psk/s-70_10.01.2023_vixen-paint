@@ -55,13 +55,11 @@
   mInfoSubWrap.forEach(function (el, index) {
     var btn = el.querySelector(".m-info__btn-show-list");
     btn.addEventListener("click", function () {
+      removeClassForTargetItemElem();
+      showBlock.classList.remove("active");
+
       if (index != btnShowListIndex) {
         resetWrappers(mInfoSubWrap);
-
-        if (checkClassShowBox()) {
-          removeClassForTargetItemElem();
-          showBlock.classList.remove("active");
-        }
       }
 
       btnShowListIndex = index;
