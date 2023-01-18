@@ -118,6 +118,8 @@
 
 .m-info {
   margin-bottom: 120px;
+  min-height: 600px;
+  transition: 0.2s;
 }
 
 .m-info__desc {
@@ -190,11 +192,14 @@
 }
 
 .m-info__inner--manager-info {
-  display: none;
+  transition: 0.2s;
+  opacity: 0;
+  height: 0;
 }
 
 .m-info__inner--manager-info.active {
-  display: block;
+  opacity: 1;
+  height: auto;
 }
 
 .m-info__sub-wrap {
@@ -214,9 +219,26 @@
   }
 }
 
+.m-info__sub-wrap.active .m-info__btn-show-list {
+  background: #0072b5;
+}
+
+.m-info__sub-wrap.active .m-info__btn-show-list:after {
+  border-bottom: 2px solid #fff;
+  border-left: 2px solid #fff;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  top: 4px;
+}
+
+.m-info__sub-wrap.active .m-info__list {
+  border-top: 1px solid #dddddd;
+  height: auto;
+  padding: 20px 32px;
+}
+
 .m-info__header {
   padding: 12px 32px;
-  border-bottom: 1px solid #dddddd;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -239,19 +261,11 @@
   max-height: 320px;
   overflow-y: auto;
   padding: 20px 32px;
+  height: 0;
+  padding: 0;
   scrollbar-width: thin;
   scrollbar-color: #0057a3 #e7e7e7;
-}
-
-@media (max-width: 960px) {
-  .m-info__list {
-    height: 0;
-    padding: 0;
-  }
-  .m-info__list.active {
-    height: auto;
-    padding: 20px 32px;
-  }
+  border-top: 1px solid rgba(221, 221, 221, 0);
 }
 
 .m-info__list::-webkit-scrollbar {
@@ -310,30 +324,13 @@
   transition: 0.3s;
 }
 
-@media (min-width: 960px) {
-  .m-info__btn-show-list {
-    display: none;
-  }
+.m-info__btn-show-list:hover {
+  background: #0072b5;
 }
 
-@media (max-width: 960px) {
-  .m-info__btn-show-list.active {
-    background: #0072b5;
-  }
-  .m-info__btn-show-list.active:after {
-    border-bottom: 2px solid #fff;
-    border-left: 2px solid #fff;
-    -webkit-transform: rotate(135deg);
-            transform: rotate(135deg);
-    top: 4px;
-  }
-  .m-info__btn-show-list:hover {
-    background: #0072b5;
-  }
-  .m-info__btn-show-list:hover:after {
-    border-bottom: 2px solid #fff;
-    border-left: 2px solid #fff;
-  }
+.m-info__btn-show-list:hover:after {
+  border-bottom: 2px solid #fff;
+  border-left: 2px solid #fff;
 }
 
 .m-info__btn-show-list:after {

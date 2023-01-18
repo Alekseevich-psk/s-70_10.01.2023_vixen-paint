@@ -7,9 +7,13 @@
   if (!items.length) return;
   var showBlock = parent.querySelector(".m-info__inner--manager-info");
   var itemObj = {};
+  var btnShowListIndex = null;
+  var targetItem = null;
   items.forEach(function (item) {
     item.addEventListener("click", function () {
-      this.classList.toggle("active");
+      removeClassForTargetItemElem();
+      targetItem = this;
+      targetItem.classList.add("active");
       var name = item.querySelector(".hide-block__name").innerHTML;
       var email = item.querySelector(".hide-block__email").innerHTML;
       var qr = item.querySelector(".hide-block__qr img").src;
@@ -27,7 +31,7 @@
   });
 
   function showData(obj) {
-    if (!showBlock.classList.contains("active")) {
+    if (!checkClassShowBox()) {
       showBlock.classList.add("active");
     }
 
@@ -48,12 +52,38 @@
 
   var mInfoSubWrap = parent.querySelectorAll(".m-info__sub-wrap");
   if (!mInfoSubWrap.length) return;
-  mInfoSubWrap.forEach(function (el) {
-    var btn = el.querySelector('.m-info__btn-show-list');
-    var wrap = el.querySelector('.m-info__list');
-    btn.addEventListener('click', function () {
-      this.classList.toggle('active');
-      wrap.classList.toggle('active');
+  mInfoSubWrap.forEach(function (el, index) {
+    var btn = el.querySelector(".m-info__btn-show-list");
+    btn.addEventListener("click", function () {
+      if (index != btnShowListIndex) {
+        resetWrappers(mInfoSubWrap);
+
+        if (checkClassShowBox()) {
+          removeClassForTargetItemElem();
+          showBlock.classList.remove("active");
+        }
+      }
+
+      btnShowListIndex = index;
+      el.classList.toggle("active");
     });
   });
+
+  function resetWrappers(arr) {
+    arr.forEach(function (el) {
+      if (el.classList.contains("active")) el.classList.remove("active");
+    });
+  }
+
+  function removeClassForTargetItemElem() {
+    if (targetItem !== null && targetItem.classList.contains("active")) targetItem.classList.remove("active");
+  }
+
+  var checkClassShowBox = function checkClassShowBox() {
+    if (showBlock.classList.contains("active")) {
+      return true;
+    }
+
+    return false;
+  };
 })();

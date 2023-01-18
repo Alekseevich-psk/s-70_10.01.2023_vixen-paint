@@ -8,10 +8,14 @@
     const showBlock = parent.querySelector(".m-info__inner--manager-info");
 
     const itemObj = {};
+    let btnShowListIndex = null;
+    let targetItem = null;
 
     items.forEach((item) => {
         item.addEventListener("click", function () {
-            this.classList.toggle("active");
+            removeClassForTargetItemElem();
+            targetItem = this;
+            targetItem.classList.add("active");
 
             const name = item.querySelector(".hide-block__name").innerHTML;
             const email = item.querySelector(".hide-block__email").innerHTML;
@@ -34,7 +38,7 @@
     });
 
     function showData(obj) {
-        if (!showBlock.classList.contains("active")) {
+        if (!checkClassShowBox()) {
             showBlock.classList.add("active");
         }
 
@@ -60,14 +64,39 @@
     const mInfoSubWrap = parent.querySelectorAll(".m-info__sub-wrap");
     if (!mInfoSubWrap.length) return;
 
-    mInfoSubWrap.forEach(el => {
-        const btn = el.querySelector('.m-info__btn-show-list');
-        const wrap = el.querySelector('.m-info__list');
+    mInfoSubWrap.forEach((el, index) => {
+        const btn = el.querySelector(".m-info__btn-show-list");
 
-        btn.addEventListener('click', function() {
-            this.classList.toggle('active');
-            wrap.classList.toggle('active');
-        })
+        btn.addEventListener("click", function () {
+            if (index != btnShowListIndex) {
+                resetWrappers(mInfoSubWrap);
+
+                if (checkClassShowBox()) {
+                    removeClassForTargetItemElem();
+                    showBlock.classList.remove("active");
+                }
+            }
+
+            btnShowListIndex = index;
+
+            el.classList.toggle("active");
+        });
     });
 
+    function resetWrappers(arr) {
+        arr.forEach((el) => {
+            if (el.classList.contains("active")) el.classList.remove("active");
+        });
+    }
+
+    function removeClassForTargetItemElem() {
+        if (targetItem !== null && targetItem.classList.contains("active")) targetItem.classList.remove("active");
+    }
+
+    const checkClassShowBox = function () {
+        if (showBlock.classList.contains("active")) {
+            return true;
+        }
+        return false;
+    };
 })();
