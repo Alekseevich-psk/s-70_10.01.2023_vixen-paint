@@ -5,7 +5,9 @@
   if (!parent) return;
   var items = parent.querySelectorAll(".m-info__item");
   if (!items.length) return;
-  var showBlock = parent.querySelector(".m-info__inner--manager-info");
+  var mInfoSubWrap = parent.querySelectorAll(".m-info__inner");
+  if (!mInfoSubWrap.length) return;
+  var showBlock = parent.querySelector(".m-info__inner--manager");
   var itemObj = {};
   var btnShowListIndex = null;
   var targetItem = null;
@@ -31,6 +33,8 @@
   });
 
   function showData(obj) {
+    console.log(showBlock);
+
     if (!checkClassShowBox()) {
       showBlock.classList.add("active");
     }
@@ -50,11 +54,16 @@
     });
   }
 
-  var mInfoSubWrap = parent.querySelectorAll(".m-info__sub-wrap");
-  if (!mInfoSubWrap.length) return;
   mInfoSubWrap.forEach(function (el, index) {
     var btn = el.querySelector(".m-info__btn-show-list");
     btn.addEventListener("click", function () {
+      if (index == 0) {
+        console.log(index);
+        showBlock.classList.add('order');
+      } else {
+        showBlock.classList.remove('order');
+      }
+
       removeClassForTargetItemElem();
       showBlock.classList.remove("active");
 
@@ -77,11 +86,11 @@
     if (targetItem !== null && targetItem.classList.contains("active")) targetItem.classList.remove("active");
   }
 
-  var checkClassShowBox = function checkClassShowBox() {
+  function checkClassShowBox() {
     if (showBlock.classList.contains("active")) {
       return true;
     }
 
     return false;
-  };
+  }
 })();

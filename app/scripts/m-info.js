@@ -5,7 +5,10 @@
     const items = parent.querySelectorAll(".m-info__item");
     if (!items.length) return;
 
-    const showBlock = parent.querySelector(".m-info__inner--manager-info");
+    const mInfoSubWrap = parent.querySelectorAll(".m-info__inner");
+    if (!mInfoSubWrap.length) return;
+
+    const showBlock = parent.querySelector(".m-info__inner--manager");
 
     const itemObj = {};
     let btnShowListIndex = null;
@@ -38,6 +41,7 @@
     });
 
     function showData(obj) {
+        console.log(showBlock);
         if (!checkClassShowBox()) {
             showBlock.classList.add("active");
         }
@@ -61,13 +65,17 @@
         });
     }
 
-    const mInfoSubWrap = parent.querySelectorAll(".m-info__sub-wrap");
-    if (!mInfoSubWrap.length) return;
-
     mInfoSubWrap.forEach((el, index) => {
         const btn = el.querySelector(".m-info__btn-show-list");
 
         btn.addEventListener("click", function () {
+            if(index == 0) {
+                console.log(index);
+                showBlock.classList.add('order');
+            } else {
+                showBlock.classList.remove('order');
+            }
+
             removeClassForTargetItemElem();
             showBlock.classList.remove("active");
 
@@ -91,10 +99,10 @@
         if (targetItem !== null && targetItem.classList.contains("active")) targetItem.classList.remove("active");
     }
 
-    const checkClassShowBox = function () {
+    function checkClassShowBox() {
         if (showBlock.classList.contains("active")) {
             return true;
         }
         return false;
-    };
+    }
 })();
