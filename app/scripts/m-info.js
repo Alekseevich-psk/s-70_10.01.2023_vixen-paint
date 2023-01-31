@@ -20,14 +20,16 @@
             targetItem = this;
             targetItem.classList.add("active");
 
-            const name = item.querySelector(".hide-block__name").innerHTML;
-            const email = item.querySelector(".hide-block__email").innerHTML;
-            const qr = item.querySelector(".hide-block__qr img").src;
+            const name = item.querySelector(".hide-block__name");
+            const textQr = item.querySelector(".hide-block__text-qr");
+            const email = item.querySelector(".hide-block__email");
+            const qr = item.querySelector(".hide-block__qr img");
             const phones = item.querySelectorAll(".hide-block__phone");
 
-            itemObj.name = name;
-            itemObj.email = email;
-            itemObj.qr = qr;
+            name ? (itemObj.name = name.innerHTML) : (itemObj.textQr = "");
+            email ? (itemObj.email = email.innerHTML) : (itemObj.email = "");
+            textQr ? (itemObj.textQr = textQr.innerHTML) : (itemObj.textQr = "");
+            if (qr) itemObj.qr = qr.src;
 
             const phonesArr = [];
             phones.forEach((phone) => {
@@ -41,7 +43,6 @@
     });
 
     function showData(obj) {
-        console.log(showBlock);
         if (!checkClassShowBox()) {
             showBlock.classList.add("active");
         }
@@ -49,11 +50,13 @@
         const name = showBlock.querySelector(".manager__name");
         const email = showBlock.querySelector(".manager__email-wrap");
         const qr = showBlock.querySelector(".manager__qr img");
+        const textQr = showBlock.querySelector(".manager__desc--qr");
         const phonesWrap = showBlock.querySelector(".manager__phones-wrap");
 
-        name.innerHTML = obj.name;
-        email.innerHTML = obj.email;
-        qr.src = obj.qr;
+        if (name) name.innerHTML = obj.name;
+        if (email) email.innerHTML = obj.email;
+        if (textQr) textQr.innerHTML = obj.textQr;
+        if (qr) qr.src = obj.qr;
 
         phonesWrap.innerHTML = "";
         email.innerHTML = "";
@@ -69,11 +72,10 @@
         const btn = el.querySelector(".m-info__btn-show-list");
 
         btn.addEventListener("click", function () {
-            if(index == 0) {
-                console.log(index);
-                showBlock.classList.add('order');
+            if (index == 0) {
+                showBlock.classList.add("order");
             } else {
-                showBlock.classList.remove('order');
+                showBlock.classList.remove("order");
             }
 
             removeClassForTargetItemElem();

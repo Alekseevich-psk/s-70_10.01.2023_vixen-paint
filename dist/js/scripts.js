@@ -16,13 +16,15 @@
       removeClassForTargetItemElem();
       targetItem = this;
       targetItem.classList.add("active");
-      var name = item.querySelector(".hide-block__name").innerHTML;
-      var email = item.querySelector(".hide-block__email").innerHTML;
-      var qr = item.querySelector(".hide-block__qr img").src;
+      var name = item.querySelector(".hide-block__name");
+      var textQr = item.querySelector(".hide-block__text-qr");
+      var email = item.querySelector(".hide-block__email");
+      var qr = item.querySelector(".hide-block__qr img");
       var phones = item.querySelectorAll(".hide-block__phone");
-      itemObj.name = name;
-      itemObj.email = email;
-      itemObj.qr = qr;
+      name ? itemObj.name = name.innerHTML : itemObj.textQr = "";
+      email ? itemObj.email = email.innerHTML : itemObj.email = "";
+      textQr ? itemObj.textQr = textQr.innerHTML : itemObj.textQr = "";
+      if (qr) itemObj.qr = qr.src;
       var phonesArr = [];
       phones.forEach(function (phone) {
         phonesArr.push(phone.innerHTML);
@@ -33,8 +35,6 @@
   });
 
   function showData(obj) {
-    console.log(showBlock);
-
     if (!checkClassShowBox()) {
       showBlock.classList.add("active");
     }
@@ -42,10 +42,12 @@
     var name = showBlock.querySelector(".manager__name");
     var email = showBlock.querySelector(".manager__email-wrap");
     var qr = showBlock.querySelector(".manager__qr img");
+    var textQr = showBlock.querySelector(".manager__desc--qr");
     var phonesWrap = showBlock.querySelector(".manager__phones-wrap");
-    name.innerHTML = obj.name;
-    email.innerHTML = obj.email;
-    qr.src = obj.qr;
+    if (name) name.innerHTML = obj.name;
+    if (email) email.innerHTML = obj.email;
+    if (textQr) textQr.innerHTML = obj.textQr;
+    if (qr) qr.src = obj.qr;
     phonesWrap.innerHTML = "";
     email.innerHTML = "";
     email.insertAdjacentHTML("beforeend", "<a href=\"mailto:".concat(obj.email, "\" class=\"manager__link\">").concat(obj.email, "</a>"));
@@ -58,10 +60,9 @@
     var btn = el.querySelector(".m-info__btn-show-list");
     btn.addEventListener("click", function () {
       if (index == 0) {
-        console.log(index);
-        showBlock.classList.add('order');
+        showBlock.classList.add("order");
       } else {
-        showBlock.classList.remove('order');
+        showBlock.classList.remove("order");
       }
 
       removeClassForTargetItemElem();
